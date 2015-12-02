@@ -5,9 +5,13 @@ var Woden = require('woden'),
 			changeOrigin: true
 		}),
 		redis = require('redis'),
-		client = redis.createClient({'return_buffers': true});
+		client = redis.createClient({
+      'return_buffers': true,
+      'url': process.env.REDIS_URL
+    }),
+    port = process.env.PORT || 4444;
 
-client.select(10);
+client.select(1);
 
 woden.when( /.*/, {
 	cacheTimeout: function( cacheEntry, req, proxyRes ) {
@@ -36,5 +40,6 @@ woden.store({
   }
 });
 
-woden.listen(4444);
-console.log('Listening on 4444...');
+woden.listen(port, function(){
+  console.log('Listening on', port);
+});

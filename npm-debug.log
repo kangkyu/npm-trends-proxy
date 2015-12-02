@@ -9,8 +9,8 @@
 6 silly lifecycle proxy-server@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle proxy-server@1.0.0~start: proxy-server@1.0.0
 8 verbose lifecycle proxy-server@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle proxy-server@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/jpot/development/proxy-server/npm-trends-proxy/node_modules/.bin:/Users/jpot/.rvm/gems/ruby-2.2.0/bin:/Users/jpot/.rvm/gems/ruby-2.2.0@global/bin:/Users/jpot/.rvm/rubies/ruby-2.2.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jpot/.rvm/bin
-10 verbose lifecycle proxy-server@1.0.0~start: CWD: /Users/jpot/development/proxy-server/npm-trends-proxy
+9 verbose lifecycle proxy-server@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/jpot/development/npm-trends-proxy/node_modules/.bin:/Users/jpot/.rvm/gems/ruby-2.2.0/bin:/Users/jpot/.rvm/gems/ruby-2.2.0@global/bin:/Users/jpot/.rvm/rubies/ruby-2.2.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jpot/.rvm/bin
+10 verbose lifecycle proxy-server@1.0.0~start: CWD: /Users/jpot/development/npm-trends-proxy
 11 silly lifecycle proxy-server@1.0.0~start: Args: [ '-c', 'node app.js' ]
 12 silly lifecycle proxy-server@1.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle proxy-server@1.0.0~start: Failed to exec start script
@@ -25,7 +25,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:818:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
 15 verbose pkgid proxy-server@1.0.0
-16 verbose cwd /Users/jpot/development/proxy-server/npm-trends-proxy
+16 verbose cwd /Users/jpot/development/npm-trends-proxy
 17 error Darwin 15.0.0
 18 error argv "/usr/local/Cellar/node/5.0.0/bin/node" "/usr/local/bin/npm" "start"
 19 error node v5.0.0
