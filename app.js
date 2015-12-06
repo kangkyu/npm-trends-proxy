@@ -11,6 +11,8 @@ var Woden = require('woden'),
     }),
     port = process.env.PORT || 4444;
 
+require('dotenv').config({silent: true});
+
 client.select(1);
 
 woden.when( /.*/, {
@@ -25,7 +27,25 @@ woden.when( /.*/, {
 
     return 86400; // cache for 24 hours (in seconds for redis)
   }  
-})
+});
+
+woden.when( /github.com/, {
+  cacheTimeout: function( cacheEntry, req, proxyRes ) {
+    if ( cacheEntry.body.length > 10000000 ) {
+      return -1; // don't cache big responses
+    }
+
+    if ( proxyRes.statusCode === 404 ) {
+      return -1; // don't cache 404 responses
+    }
+
+    return 86400; // cache for 24 hours (in seconds for redis)
+  },
+  params: {
+    client_id: process.env.GITHUB_ID,
+    client_secret: process.env.GITHUB_SECRET
+  }
+});
 
 woden.store({ 
   get: function( key, callback ) {
