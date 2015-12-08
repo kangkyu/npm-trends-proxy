@@ -9,7 +9,7 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "dotenv": "^1.2.0",
+    "dotenv": "1.2.0",
     "redis": "2.3.1",
     "woden": "https://github.com/johnmpotter/woden"
   }
