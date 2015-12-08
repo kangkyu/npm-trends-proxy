@@ -1,13 +1,13 @@
 'use strict';
 
-var Woden = require('woden'),
-		woden = new Woden({
-			changeOrigin: true
-		}),
-		redis = require('redis'),
+var redis = require('redis'),
 		client = redis.createClient({
       'return_buffers': true,
       'url': process.env.REDIS_URL
+    }),
+    Woden = require('woden'),
+    woden = new Woden({
+      changeOrigin: true
     }),
     port = process.env.PORT || 4444;
 
