@@ -1,18 +1,16 @@
 'use strict';
 
-var redis = require('redis'),
-    redis_url = process.env.REDIS_URL ? process.env.REDIS_URL : '',
+var Woden = require('woden'),
+		woden = new Woden({
+			changeOrigin: true
+		}),
+		redis = require('redis'),
 		client = redis.createClient({
       'return_buffers': true,
-      'url': redis_url
-    }),
-    Woden = require('woden'),
-    woden = new Woden({
-      changeOrigin: true
+      'url': process.env.REDIS_URL
     }),
     port = process.env.PORT || 4444;
 
-console.log('Redis_url:' + redis_url);
 require('dotenv').config({silent: true});
 
 client.select(1);
